@@ -33,24 +33,24 @@ public class ControllerServlet extends HttpServlet {
 
 		try {
 			switch (action) {
-			case "/new":
-				showNewForm(request, response);
-				break;
-			case "/insert":
-				insertArticle(request, response);
-				break;
-			case "/delete":
-				deleteArticle(request, response);
-				break;
-			case "/edit":
-				showEditForm(request, response);
-				break;
-			case "/update":
-				updateArticle(request, response);
-				break;
-			default:
-				listArticle(request, response);
-				break;
+				case "/new":
+					showNewForm(request, response);
+					break;
+				case "/insert":
+					insertArticle(request, response);
+					break;
+				case "/delete":
+					deleteArticle(request, response);
+					break;
+				case "/edit":
+					showEditForm(request, response);
+					break;
+				case "/update":
+					updateArticle(request, response);
+					break;
+				default:
+					listArticle(request, response);
+					break;
 			}
 		} catch (SQLException ex) {
 			throw new ServletException(ex);
@@ -105,7 +105,7 @@ public class ControllerServlet extends HttpServlet {
 	}
 
 	private void deleteArticle(HttpServletRequest request, HttpServletResponse response)
-	    throws SQLException, IOException {
+			throws SQLException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 
 		Article article = new Article(id);

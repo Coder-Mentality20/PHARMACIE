@@ -1,4 +1,5 @@
 package net.codejava.javaee.bookstore;
+
 public class Article {
 	protected int id;
 	protected String name;
